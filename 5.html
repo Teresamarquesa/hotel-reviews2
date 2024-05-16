@@ -1,0 +1,194 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #3b5998;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #3b5998;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 20px;
+            color: #f39c12;
+            margin-top: 10px;
+        }
+        .review-summary, .review-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .review {
+            background-color: white;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: box-shadow 0.3s;
+            position: relative;
+        }
+        .review img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .review:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review h2 {
+            color: #3b5998;
+            margin-top: 0;
+        }
+        .review-summary, .review-details {
+            color: #555;
+        }
+        .review-details {
+            display: none;
+        }
+        .review-toggle {
+            cursor: pointer;
+            color: #3b5998;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-icons a {
+            color: #3b5998;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <script>
+        function toggleReview(element) {
+            const details = element.nextElementSibling;
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                element.innerText = "Read less";
+            } else {
+                details.style.display = "none";
+                element.innerText = "Read more";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hotel Reviews</h1>
+    </header>
+    <div class="container">
+        <section id="overview" class="section">
+            <h2 class="section-title">Overview</h2>
+            <p>The hotel generally received positive feedback, with an average rating of 4.3 out of 5 stars. Guests most commonly praised the excellent location, friendly staff, and comfortable rooms. However, some guests noted issues with the Wi-Fi, noise levels, and breakfast variety.</p>
+            <ul>
+                <li><strong>Rating:</strong> 4.3</li>
+                <li><strong>Top Praised Aspects:</strong> Excellent location, Friendly staff, Comfortable rooms</li>
+                <li><strong>Top Criticized Aspects:</strong> Issues with Wi-Fi, Noise levels, Limited breakfast variety</li>
+            </ul>
+        </section>
+        <section id="highlights" class="section">
+            <h2 class="section-title">Highlights</h2>
+            <h3 class="section-subtitle">Pros</h3>
+            <ul>
+                <li>Friendly and helpful staff - <a href="#" target="_blank">"The staff went out of their way to make our stay enjoyable."</a></li>
+                <li>Prime location - <a href="#" target="_blank">"Located right in the heart of the city, close to all the major attractions."</a></li>
+                <li>Comfortable beds - <a href="#" target="_blank">"The beds were extremely comfortable, ensuring a good night's sleep."</a></li>
+            </ul>
+            <h3 class="section-subtitle">Cons</h3>
+            <ul>
+                <li>Unreliable Wi-Fi - <a href="#" target="_blank">"The Wi-Fi connection was spotty and unreliable."</a></li>
+                <li>Noisy at night - <a href="#" target="_blank">"The noise from the street made it difficult to sleep."</a></li>
+                <li>Limited breakfast options - <a href="#" target="_blank">"The breakfast selection was quite limited."</a></li>
+            </ul>
+        </section>
+        <section id="detailed-insights" class="section">
+            <h2 class="section-title">Detailed Insights</h2>
+            <div class="review">
+                <img src="https://via.placeholder.com/600x400" alt="Hotel Room">
+                <h3 class="section-subtitle">Rooms</h3>
+                <p><strong>Rating:</strong> 4.2</p>
+                <p>Guests appreciated the size and cleanliness of the rooms; the comfort of the beds was frequently mentioned positively; many guests enjoyed the views from their rooms. However, noise from the hallways disturbed some guests; issues with Wi-Fi connectivity were commonly reported; and some guests found the bathrooms to be too small.</p>
+                <ul>
+                    <li><strong>Pros:</strong></li>
+                    <li>Spacious and clean rooms - <a href="#" target="_blank">"The rooms were very spacious and clean, with modern decor."</a></li>
+                    <li>Comfortable beds - <a href="#" target="_blank">"The beds were extremely comfortable."</a></li>
+                    <li>Great views - <a href="#" target="_blank">"Our room had an amazing view of the city skyline."</a></li>
+                    <li><strong>Cons:</strong></li>
+                    <li>Noisy - <a href="#" target="_blank">"We could hear a lot of noise from the hallway."</a></li>
+                    <li>Poor Wi-Fi - <a href="#" target="_blank">"The Wi-Fi didn't work well in our room."</a></li>
+                    <li>Small bathrooms - <a href="#" target="_blank">"The bathroom was a bit too small."</a></li>
+                </ul>
+                <span class="review-toggle" onclick="toggleReview(this)">Read more</span>
+                <div class="review-details">
+                    <p>More detailed review content goes here.</p>
+                </div>
+            </div>
+            <div class="review">
+                <img src="https://via.placeholder.com/600x400" alt="Hotel Location">
+                <h3 class="section-subtitle">Location</h3>
+                <p><strong>Rating:</strong> 4.7</p>
+                <p>The central location was highly appreciated by guests; access to public transport was very convenient; and the neighborhood felt safe. However, noise from the street was a common complaint; parking was difficult to find; and some guests found the distance from the airport to be an issue.</p>
+                <ul>
+                    <li><strong>Pros:</strong></li>
+                    <li>Central location - <a href="#" target="_blank">"The hotel is in a great location, close to everything."</a></li>
+                    <li>Easy access to public transport - <a href="#" target="_blank">"There are several public transport options nearby."</a></li>
+                    <li>Safe neighborhood - <a href="#" target="_blank">"The area around the hotel felt very safe."</a></li>
+                    <li><strong>Cons:</strong></li>
+                    <li>Noisy street - <a href="#" target="_blank">"The street outside was quite noisy at night."</a></li>
